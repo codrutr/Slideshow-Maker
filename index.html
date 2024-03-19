@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Slideshow Maker</title>
+</head>
+<body>
+    <div id="slideshow-container" class="slideshow-container">
+    </div>
+
+    <div id="controls" class="controls">
+        <button id="prevBtn" class="control-btn" onclick="plusSlides(-1)">&#10094; Prev</button>
+        <button id="nextBtn" class="control-btn" onclick="plusSlides(1)">Next &#10095;</button>
+        <button id="playBtn" class="control-btn" onclick="togglePlayPause()">Play Audio</button>
+    </div>
+
+    <div id="settings" class="settings">
+        <label for="transitionType">Transition:</label>
+        <select id="transitionType" onchange="changeTransition()">
+            <option value="fade">Fade</option>
+            <option value="slide">Slide</option>
+            <option value="zoom">Zoom</option>
+        </select>
+
+        <label for="transitionDuration">Transition Duration (s):</label>
+        <input type="number" id="transitionDuration" min="1" value="2" onchange="changeTransitionDuration()">
+    </div>
+
+    <input type="file" id="fileInput" accept="image/*, video/*" multiple>
+    <input type="file" id="musicInput" accept="audio/*">
+    
+    <script src="main.js"></script>
+</body>
+</html>
